@@ -1,0 +1,20 @@
+{
+	"siteId": "976485ec-9a53-4dc4-a6a0-1fb40d922552",
+	"geolocation": {
+		"data": {
+			"city": "Khartoum",
+			"country": {
+				"code": "SD",
+				"name": "Sudan"
+			},
+			"subdivision": {
+				"code": "KH",
+				"name": "Khartoum"
+			},
+			"timezone": "Africa/Khartoum",
+			"latitude": 15.5561,
+			"longitude": 32.5272
+		},
+		"timestamp": 1722040862479
+	}
+}
