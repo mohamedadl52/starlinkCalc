@@ -10,15 +10,16 @@
 </div>
   <br> <br>
 <div>
-    <select name="starlink-countries" id="starlink-countries" class="block text-right text-xl appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded shadow leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline">
-    <option value="" disabled selected>اختر الباقه المناسبه</option>
-    <option value="mal"> <span>ملاوي</span> <span>(170,000)</span> </option>
-    <option value="nig"><span>نيجيريا</span> <span>(167,000)</span></option>
-    <option value="zam"><span>زامبيا</span> <span>(2500)</span></option>
-   <option value="kan"><span>كينيا</span> <span>(14,000)</span></option>
-    <option value="moz"><span>مزنبيق</span> <span>(6,000)</span></option>
-    <!-- Add more countries here -->
-  </select>
+  <select name="starlink-countries" id="starlink-countries" 
+                class="block text-right text-xl appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded shadow leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline"
+                @change="updatePrice">
+          <option value="" disabled selected>اختر الباقه المناسبه</option>
+          <option value="102">ملاوي (170,000)</option>
+          <option value="100">نيجيريا (167,000)</option>
+          <option value="102">زامبيا (2500)</option>
+          <option value="104">كينيا (14,000)</option>
+          <option value="100">مزنبيق (6,000)</option>
+        </select>
 
 </div>
 
@@ -28,25 +29,24 @@
     <div>
         <table class="text-xl">
   <thead>
-    <tr>
-        <th class="flex justify-start gap-x-2"> <span>جنيه</span><span>2700</span></th>
-        <th class="text-left">اجمالي بنكك</th>
-    </tr>
+    <th class="flex justify-start gap-x-2"><span>جنيه</span><span id="total-amount">0</span></th>
+                <th class="text-left">اجمالي بنكك</th>
+
   </thead>
   <tbody>
-    <tr>
-      <td class="flex justify-center gap-x-2"> <span>جنيه</span><span>2700</span></td>
-      <td>سعر الصرف</td>
-    </tr>
-    <tr>
-        <td><span>100</span><span>$</span></td>
-      <td>سعر الباقه</td>
-    </tr>
-    <tr>
-        <td><span>100</span><span>$</span></td>
-      <td> العموله</td>
-    </tr>
-  </tbody>
+              <tr>
+                <td class="flex justify-center gap-x-2"><span>جنيه</span><span id="exchange-rate">2600</span></td>
+                <td>سعر الصرف</td>
+              </tr>
+              <tr>
+                <td><span id="package-price">0</span><span>$</span></td>
+                <td>سعر الباقه</td>
+              </tr>
+              <tr>
+                <td><span id="overflex">15</span><span>$</span></td>
+                <td>العموله</td>
+              </tr>
+            </tbody>
 </table>
 
     </div>
@@ -55,7 +55,22 @@
     </div>
   </dv>   
 </template>
+<script>
+export default {
+  methods: {
+    updatePrice(event) {
+      const selectedValue = event.target.value;
+      const exchangeRate = document.getElementById('exchange-rate').textContent; // سعر الصرف
+      const packagePrice = parseFloat(selectedValue);
+      const totalAmount = ( Number(packagePrice) + 15 ) * exchangeRate ;
 
+      // تحديث القيم في الجدول
+      document.getElementById('package-price').textContent = packagePrice;
+      document.getElementById('total-amount').textContent = totalAmount;
+    }
+  }
+}
+</script>
 <style  scoped>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
   body {
@@ -67,11 +82,12 @@
 
   table {
     width: 100%;
-    margin: 40px auto;
-    padding: 20px;
-    border-collapse: collapse;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  margin: 40px auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow-x: auto; /* اجعل الجدول قابلًا للتمرير */
+  display: block; /* اجعل الجدول كتلة للسماح بالتمرير */
 
   }
 
