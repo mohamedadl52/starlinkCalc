@@ -36,7 +36,7 @@
   </thead>
   <tbody>
               <tr>
-                <td class="flex justify-center gap-x-2"><span>جنيه</span><span id="exchange-rate">2600</span></td>
+                <td class="flex justify-center gap-x-2"><span>جنيه</span><span id="exchange-rate">2550</span></td>
                 <td>سعر الصرف</td>
               </tr>
               <tr>
