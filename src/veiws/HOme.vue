@@ -14,10 +14,11 @@
                 class="block text-right text-xl appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded shadow leading-tight focus:outline-none focus:border-blue-500 focus:shadow-outline"
                 @change="updatePrice">
           <option value="" disabled selected>اختر الباقه المناسبه</option>
-          <option value="102">ملاوي (170,000)</option>
-          <option value="100">نيجيريا (167,000)</option>
-          <option value="102">زامبيا (2500)</option>
-          <option value="104">كينيا (14,000)</option>
+          <option value="103">ملاوي (170,000)</option>
+          <option value="30">نيجيريا (49,000)</option>
+          <option value="103">نيجيريا (167,000)</option>
+          <option value="103">زامبيا (2500)</option>
+          <option value="109">كينيا (14,000)</option>
           <option value="100">مزنبيق (6,000)</option>
         </select>
 
@@ -27,7 +28,7 @@
 <div>
     <div class="text-xl cairo-test "> اختر احد الباقات اعلاه</div>
     <div>
-        <table class="text-xl">
+        <table  class="text-xl">
   <thead>
     <th class="flex justify-start gap-x-2"><span>جنيه</span><span id="total-amount">0</span></th>
                 <th class="text-left">اجمالي بنكك</th>
