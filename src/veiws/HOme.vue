@@ -20,8 +20,8 @@
           <option value="93">زامبيا (2500)</option>
           <option value="109">كينيا (14,000)</option>
           <option value="100">مزنبيق (6,000)</option>
-    <option value="1">جنوب السودان (50)</option>
-       <option value="1.12">قبرص (72)</option>
+    <option value="50">جنوب السودان (50)</option>
+       <option value="80">قبرص (72)</option>
       
   </select>
 
