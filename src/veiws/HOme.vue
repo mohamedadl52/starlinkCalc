@@ -17,10 +17,13 @@
           <option value="103">ملاوي (170,000)</option>
           <option value="30">نيجيريا (49,000)</option>
           <option value="103">نيجيريا (167,000)</option>
-          <option value="103">زامبيا (2500)</option>
+          <option value="93">زامبيا (2500)</option>
           <option value="109">كينيا (14,000)</option>
           <option value="100">مزنبيق (6,000)</option>
-        </select>
+    <option value="1">جنوب السودان (50)</option>
+       <option value="1.12">قبرص (72)</option>
+      
+  </select>
 
 </div>
 
@@ -36,7 +39,7 @@
   </thead>
   <tbody>
               <tr>
-                <td class="flex justify-center gap-x-2"><span>جنيه</span><span id="exchange-rate">2550</span></td>
+                <td class="flex justify-center gap-x-2"><span>جنيه</span><span id="exchange-rate">2400</span></td>
                 <td>سعر الصرف</td>
               </tr>
               <tr>
@@ -44,7 +47,7 @@
                 <td>سعر الباقه</td>
               </tr>
               <tr>
-                <td><span id="overflex">15</span><span>$</span></td>
+                <td><span id="overflex">5</span><span>$</span></td>
                 <td>العموله</td>
               </tr>
             </tbody>
@@ -63,7 +66,7 @@ export default {
       const selectedValue = event.target.value;
       const exchangeRate = document.getElementById('exchange-rate').textContent; // سعر الصرف
       const packagePrice = parseFloat(selectedValue);
-      const totalAmount = ( Number(packagePrice) + 15 ) * exchangeRate ;
+      const totalAmount = ( Number(packagePrice) + 5 ) * exchangeRate ;
 
       // تحديث القيم في الجدول
       document.getElementById('package-price').textContent = packagePrice;
